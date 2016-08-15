@@ -1,0 +1,63 @@
+<p id="notice"><%= notice %></p>
+
+
+  <div class="vertical-center">
+    <div class="jumbotron jumbotron-center">
+      <p class="jumbo-title">Hi <span class="jumbo-user-name"><%= current_user.name %></span> </p>
+      <span class="jumbo-content">Did you already do something today? :)</span><br><br>
+
+      <%= link_to 'You should have', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
+
+    </div>
+
+      <div id="animatedModal" >
+          <div class="close-animatedModal">
+            x
+          </div>
+
+          <div class="modal-content vertical-center ">
+            <div class="jumbotron jumbotron-center">
+            <%= form_for(@post) do |f| %>
+              <% if @post.errors.any? %>
+                <div id="error_explanation">
+                  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+                  <ul>
+                  <% @post.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                  </ul>
+                </div>
+              <% end %>
+
+              <div class="form-group label-static">
+                <p class="jumbo-content">Thank you for your interest in working with Humaan. <br>
+                                          Getting started is easy – just fill in the blanks below <br>
+                                          and we'll get back to you within one working day. How exciting!</p>
+                <%= f.text_field :title, class: 'modal-textfield'%>
+
+              </div>
+
+              <div class="actions">
+                <%= f.submit class: 'btn btn-danger btn-raised' %>
+              </div>
+
+            </div>
+
+            <% end %>
+          </div>
+      </div>
+
+  </div>
+
+
+  <%= javascript_include_tag 'animatedModal' , 'data-turbolinks-track' => true %>
+  <script>
+    $("#new").animatedModal({
+
+                animatedOut:'bounceOut',
+                color:'#00AA9A'
+
+            });
+  </script>
+<br>
