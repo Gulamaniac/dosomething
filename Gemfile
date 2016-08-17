@@ -3,6 +3,13 @@ source 'https://rubygems.org'
 #Authentication gem
 gem 'devise'
 
+#Authorization gem
+gem "cancan"
+
+gem 'omniauth-facebook'
+
+gem "omniauth-google-oauth2"
+
 gem 'bootstrap-sass', '~> 3.3.6'
 
 gem 'font-awesome-sass'

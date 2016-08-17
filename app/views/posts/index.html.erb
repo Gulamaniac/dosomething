@@ -1,12 +1,11 @@
-<p id="notice"><%= notice %></p>
-
 
   <div class="vertical-center">
     <div class="jumbotron jumbotron-center">
       <p class="jumbo-title">Hi <span class="jumbo-user-name"><%= current_user.name %></span> </p>
       <span class="jumbo-content">Did you already do something today? :)</span><br><br>
 
-      <%= link_to 'You should have', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
+      <%= link_to 'Yes', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
+      <%= link_to 'Open List', list_posts_path , class: 'btn btn-raised btn-primary btn-lg' %>
 
     </div>
 
@@ -31,10 +30,10 @@
               <% end %>
 
               <div class="form-group label-static">
-                <p class="jumbo-content">Thank you for your interest in working with Humaan. <br>
+                <p class="jumbo-content">Thank you for your interest. <br>
                                           Getting started is easy – just fill in the blanks below <br>
-                                          and we'll get back to you within one working day. How exciting!</p>
-                <%= f.text_field :title, class: 'modal-textfield'%>
+                                          and get to see all your posts. How exciting!</p>
+                <%= f.text_field :title, class: 'modal-textfield', placeholder: 'Write Something Here . . .' %>
 
               </div>
 
@@ -56,7 +55,7 @@
     $("#new").animatedModal({
 
                 animatedOut:'bounceOut',
-                color:'#00AA9A'
+                color:'#A26BEF'
 
             });
   </script>

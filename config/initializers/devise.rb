@@ -14,6 +14,13 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'gulamaniac@gmail.com'
 
+  #OmniAuth
+
+  config.omniauth :facebook, "711441755671316", "e041655285e99844291e214c3e1f4ecb",
+                  callback_url: "http://localhost:3000/posts/",
+                  :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
@@ -235,7 +242,7 @@ Devise.setup do |config|
   # The default HTTP method used to sign out a resource. Default is :delete.
   # config.sign_out_via = :delete
   config.sign_out_via = :delete
- 
+
   # ==> OmniAuth
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.

@@ -34,6 +34,8 @@
 
 body{
     color:#333333;
+    margin: 0;
+    padding: 0;
 }
 
 ::selection {
@@ -45,15 +47,44 @@ body{
     color: white;
 }
 
+.btn-primary .btn-raised{
+  background: #A36DEF
+}
+
+.btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
+    background-color: #A36DEF !important;
+}
+
+.btn-login{
+  background: none;
+  color: white;
+  font-family: "Roboto";
+  font-weight: 300;
+  cursor: pointer;
+  border: none;
+  font-size:12px;
+  text-decoration: underline;
+}
+
+ .btn-login:hover{
+   color: #8456C3;
+ }
+
 .container{
 
 }
 
 .item-right{
   position:absolute;
-  right: 20px;
+  right: 25px;
   margin: 0;
+  top:20px;
+  color: #A36DEF;
   padding: 0;
+}
+
+.item-right i{
+  color:#A36DEF;
 }
 
 .jumbo-title{
@@ -81,20 +112,41 @@ body{
 
 .modal-textfield{
 
-		appearance: none;
-		outline: 0;
-		border: 1px solid fade(white, 40%);
-		background-color: fade(white, 20%);
 		width: 500px;
-
+    background-color: #8456C3;
+    border:none;
 		padding: 10px 15px;
 		margin: 0 auto 10px auto;
 		text-align: left;
 		font-size: 18px;
-
-		color: #333;
+		color: #fff;
+    font-family: 'SoulMarker';
 		font-weight: 300;
   }
+
+  .label-static input::-webkit-input-placeholder{
+    font-family: 'Roboto';
+    color: #A881D9;
+    font-size: 14px;
+  }
+
+  .login-textfield input{
+    background-color: #8456C3;
+    padding: 10px;
+    outline: none;
+    box-sizing: border-box;
+    color: white;
+    border:none;
+    width: 400px;
+    margin:5px;
+  }
+
+  .login-textfield input::-webkit-input-placeholder{
+    font-family: 'Roboto';
+    color: #A881D9;
+  }
+
+
 
 .vertical-center {
   min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
