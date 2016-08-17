@@ -17,9 +17,12 @@ Devise.setup do |config|
   #OmniAuth
 
   config.omniauth :facebook, "711441755671316", "e041655285e99844291e214c3e1f4ecb",
-                  callback_url: "http://localhost:3000/posts/",
-                  :client_options => {:ssl => {:ca_path => '/etc/ssl/certs'}}
+                  :client_options => { :ssl => { :ca_file => Rails.root.join('lib/assets/cacert.pem').to_s } },
+                  callback_url: "http://localhost:3000/users/auth/facebook/callback"
 
+
+  config.omniauth :google_oauth2, "1060223500842-sm81s3kieds9jufoskal5rkbto4kn8bm.apps.googleusercontent.com", "bmOt3LFIYr5cR7J7xlrQJUh-",
+                  :client_options => { :ssl => { :ca_file => Rails.root.join('lib/assets/cacert.pem').to_s } }
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'

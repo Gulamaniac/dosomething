@@ -3,7 +3,7 @@
   <div class="jumbotron jumbotron-center" >
     <h2 class="jumbo-title" style="color:white; font-family:SoulMarker"> Smile :)</h2>
    <%= link_to "  <i class='fa fa-facebook-official' style='margin-right:10px;font-size:20px'></i>".html_safe, user_facebook_omniauth_authorize_path, class: "btn-login" %>
-   <%= link_to "  <i class='fa fa-google-plus' style='font-size:20px'></i>".html_safe, user_facebook_omniauth_authorize_path, class: "btn-login" %><br>
+   <%= link_to "  <i class='fa fa-google-plus' style='font-size:20px'></i>".html_safe, user_google_oauth2_omniauth_authorize_path, class: "btn-login" %><br>
 
     <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="login-textfield field">
