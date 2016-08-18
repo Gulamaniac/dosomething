@@ -1,6 +1,6 @@
 
   <div class="vertical-center">
-    <div class="jumbotron jumbotron-center">
+    <div class="jumbotron-center">
       <p class="jumbo-title">Hi <span class="jumbo-user-name"><%= current_user.name %></span> </p>
       <span class="jumbo-content">Did you already do something today? :)</span><br><br>
 
@@ -14,8 +14,8 @@
             x
           </div>
 
-          <div class="modal-content vertical-center ">
-            <div class="jumbotron jumbotron-center">
+          <div style="" class="modal-content vertical-center ">
+            <div class="jumbotron-center">
             <%= form_for(@post) do |f| %>
               <% if @post.errors.any? %>
                 <div id="error_explanation">
@@ -41,22 +41,20 @@
                 <%= f.submit class: 'btn btn-danger btn-raised' %>
               </div>
 
+
             </div>
 
             <% end %>
+
           </div>
       </div>
-
   </div>
-
-
   <%= javascript_include_tag 'animatedModal' , 'data-turbolinks-track' => true %>
   <script>
     $("#new").animatedModal({
+      animatedOut:'bounceOut',
+      color:'#A26BEF'
+    });
 
-                animatedOut:'bounceOut',
-                color:'#A26BEF'
-
-            });
   </script>
 <br>

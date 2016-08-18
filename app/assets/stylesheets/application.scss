@@ -13,8 +13,8 @@
  */
 
 //@import "bootstrap-sprockets";
-//@import "bootstrap";
-
+@import "bootstrap";
+@import 'https://fonts.googleapis.com/css?family=Lobster|Raleway:300,400,500,700,800,900';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
@@ -36,6 +36,7 @@ body{
     color:#333333;
     margin: 0;
     padding: 0;
+    background-color: #333;
 }
 
 ::selection {
@@ -70,9 +71,44 @@ body{
    color: #8456C3;
  }
 
-.container{
+ .caption{
+   font-family: 'Lobster';
+   margin-top:5%;
+   text-align: center;
+   color:#fff;
+ }
+
+ .container{
+    width: 100%;
+    padding-left:20%;
+    padding-right:20%;
+    padding-top: 60px;
+    padding-bottom: 100px;
+    margin-top:50px;
+    background: #fff;
+    font-family: 'Raleway', sans-serif;
+
+  }
+
+.container h1{
+
+  padding:0;
+  margin:0;
+  color: #333;
 
 }
+
+.container a{
+  color: #A388F3;
+
+}
+
+
+.container h1 a{
+  font-weight: 700;
+  Color: #333;
+}
+
 
 .item-right{
   position:absolute;
@@ -81,6 +117,8 @@ body{
   top:20px;
   color: #A36DEF;
   padding: 0;
+  font-family: 'Raleway';
+  font-weight:700;
 }
 
 .item-right i{
@@ -124,6 +162,12 @@ body{
 		font-weight: 300;
   }
 
+  .modal-content{
+    background: none;
+    border: none;
+    box-shadow: none;
+  }
+
   .label-static input::-webkit-input-placeholder{
     font-family: 'Roboto';
     color: #A881D9;
@@ -146,15 +190,81 @@ body{
     color: #A881D9;
   }
 
-
-
-.vertical-center {
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-  justify-content: center;
-
-  display: flex;
-  align-items: center;
-
-  margin: 0 auto;
+  #snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    border-radius: 2px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    bottom: 30px;
+    left:30px;
+    font-size: 17px;
 }
+
+  #snackbar.show {
+      visibility: visible;
+      -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+      animation: fadein 0.5s, fadeout 0.5s 2.5s;
+  }
+
+  @-webkit-keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+  }
+
+  @keyframes fadein {
+      from {bottom: 0; opacity: 0;}
+      to {bottom: 30px; opacity: 1;}
+  }
+
+  @-webkit-keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+  }
+
+  @keyframes fadeout {
+      from {bottom: 30px; opacity: 1;}
+      to {bottom: 0; opacity: 0;}
+  }
+
+
+  .list-item-container{
+    margin-top:30px;
+  }
+
+  .list-item-header span{
+    font-size: 13px;
+    font-family:  'Lobster';
+  }
+
+  .list-item-header span a{
+    font-size: 15px;
+  }
+
+  .list-item-content{
+    padding-top: 10px;
+    font-size: 18px;
+    line-height: 1.6;
+
+  }
+
+  .list-item-title{
+    text-decoration:none;
+    color:#333;
+
+  }
+
+  .vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100vh; /* These two lines are counted as one :-)       */
+    justify-content: center;
+
+    display: flex;
+    align-items: center;
+
+    margin: 0 auto;
+  }
