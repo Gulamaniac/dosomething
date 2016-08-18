@@ -1,11 +1,11 @@
 
   <div class="vertical-center">
     <div class="jumbotron-center">
-      <p class="jumbo-title">Hi <span class="jumbo-user-name"><%= current_user.name %></span> </p>
+      <p class="jumbo-title"> <span class="jumbo-user-name"><%= current_user.name %></span> </p>
       <span class="jumbo-content">Did you already do something today? :)</span><br><br>
 
-      <%= link_to 'Yes', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
-      <%= link_to 'Open List', list_posts_path , class: 'btn btn-raised btn-primary btn-lg' %>
+      <%= link_to 'Share', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
+      <%= link_to 'Explore', list_posts_path , class: 'btn btn-raised btn-primary btn-lg' %>
 
     </div>
 

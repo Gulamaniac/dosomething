@@ -36,7 +36,6 @@ body{
     color:#333333;
     margin: 0;
     padding: 0;
-    background-color: #333;
 }
 
 ::selection {
@@ -49,11 +48,13 @@ body{
 }
 
 .btn-primary .btn-raised{
-  background: #A36DEF
+  background: #A36DEF;
+
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
     background-color: #A36DEF !important;
+    border:none !important;
 }
 
 .btn-login{
@@ -75,7 +76,7 @@ body{
    font-family: 'Lobster';
    margin-top:5%;
    text-align: center;
-   color:#fff;
+   font-size: 30px;
  }
 
  .container{
@@ -145,7 +146,7 @@ body{
 
 .jumbotron-center{
   text-align: center;
-  font-family: 'SoulMarker';
+  font-family: 'Raleway';
 }
 
 .modal-textfield{
@@ -237,12 +238,8 @@ body{
   }
 
   .list-item-header span{
-    font-size: 13px;
-    font-family:  'Lobster';
-  }
-
-  .list-item-header span a{
-    font-size: 15px;
+    font-size: 12px;
+    font-family:  'Roboto';
   }
 
   .list-item-content{
@@ -253,7 +250,12 @@ body{
   }
 
   .list-item-title{
-    text-decoration:none;
+    color:#333;
+
+  }
+
+  .list-item-title i{
+    font-size: 20px;
     color:#333;
 
   }

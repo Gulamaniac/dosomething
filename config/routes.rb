@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     collection do
       get 'list'
     end
+    resources :comments
   end
 
   #get '/list' => 'posts#list', :as => :posts_list

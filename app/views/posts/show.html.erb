@@ -11,6 +11,7 @@
 </p>
 
 
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
+<% if can? :update, @post %>
+  <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path(@post)  %>
+<% end %>
 <%= link_to 'Back', list_posts_path %>

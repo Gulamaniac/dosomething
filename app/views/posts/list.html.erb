@@ -9,12 +9,20 @@
       <div class="list-item-container">
 
         <div class="list-item-header">
-          <b><h1 class="list-item-item"><%= link_to post.title.html_safe, post  %></h1></b>
-          <span>
-            Wordings By: Author Placeholder
+          <b>
+            <h1 class="list-item-title">
+              <%= link_to post.title.html_safe, post  %>
+              <% if can? :update, post %>
+              <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path(post)  %>
+              <% end %>
+              <% if can? :destroy, post %>
+              <%= link_to '<i class="fa fa-trash"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </h1>
 
-            <%= link_to 'Edit', edit_post_path(post)  %>
-            <%= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </b>
+          <span>
+            Wordings By: <%= post.user.email %>
           </span>
         </div>
 
