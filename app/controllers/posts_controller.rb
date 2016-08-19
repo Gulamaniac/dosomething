@@ -14,10 +14,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  def list
-    @posts = Post.all
-  end
-
   # GET /posts/new
   def new
     @post = Post.new
@@ -63,7 +59,7 @@ class PostsController < ApplicationController
   def destroy
     @post.destroy
     respond_to do |format|
-      format.html { redirect_to list_posts_path, notice: 'Post was successfully destroyed.' }
+      format.html { redirect_to posts_path, notice: 'Post was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

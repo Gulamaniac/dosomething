@@ -1,60 +1,37 @@
 
-  <div class="vertical-center">
-    <div class="jumbotron-center">
-      <p class="jumbo-title"> <span class="jumbo-user-name"><%= current_user.name %></span> </p>
-      <span class="jumbo-content">Did you already do something today? :)</span><br><br>
+<h1 class="caption">Jump & Smile</h1>
 
-      <%= link_to 'Share', '#animatedModal', class: 'btn btn-raised btn-primary btn-lg' , id: 'new'%>
-      <%= link_to 'Explore', list_posts_path , class: 'btn btn-raised btn-primary btn-lg' %>
-
-    </div>
-
-      <div id="animatedModal" >
-          <div class="close-animatedModal">
-            x
-          </div>
-
-          <div style="" class="modal-content vertical-center ">
-            <div class="jumbotron-center">
-            <%= form_for(@post) do |f| %>
-              <% if @post.errors.any? %>
-                <div id="error_explanation">
-                  <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
-
-                  <ul>
-                  <% @post.errors.full_messages.each do |message| %>
-                    <li><%= message %></li>
-                  <% end %>
-                  </ul>
-                </div>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-12">
+      <%= link_to 'New Post', new_post_path, class: "btn btn-raised btn-primary pull-right" %><br>
+      <% @posts.each do |post| %>
+      <div class="list-item-container">
+        <div class="list-item-header">
+          <b>
+            <h1 class="list-item-title">
+              <%= link_to post.title.html_safe, post  %>
+              <% if can? :update, post %>
+              <%= link_to '<i class="fa fa-pencil"></i>'.html_safe, edit_post_path(post)  %>
               <% end %>
+              <% if can? :destroy, post %>
+              <%= link_to '<i class="fa fa-trash"></i>'.html_safe, post, method: :delete, data: { confirm: 'Are you sure?' } %>
+              <% end %>
+            </h1>
 
-              <div class="form-group label-static">
-                <p class="jumbo-content">Thank you for your interest. <br>
-                                          Getting started is easy – just fill in the blanks below <br>
-                                          and get to see all your posts. How exciting!</p>
-                <%= f.text_field :title, class: 'modal-textfield', placeholder: 'Write Something Here . . .' %>
+          </b>
+          <span>
+            Wordings By: <%= link_to post.user.email, home_path(post.user.id) %>
+          </span>
+        </div>
 
-              </div>
-
-              <div class="actions">
-                <%= f.submit class: 'btn btn-danger btn-raised' %>
-              </div>
-
-
-            </div>
-
-            <% end %>
-
-          </div>
+        <div class="list-item-content">
+          <%= post.content %>
+        </div>
+        <hr>
       </div>
+      <% end %>
+    </div>
   </div>
-  <%= javascript_include_tag 'animatedModal' , 'data-turbolinks-track' => true %>
-  <script>
-    $("#new").animatedModal({
-      animatedOut:'bounceOut',
-      color:'#A26BEF'
-    });
-
-  </script>
+</div>
 <br>

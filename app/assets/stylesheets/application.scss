@@ -14,13 +14,20 @@
 
 //@import "bootstrap-sprockets";
 @import "bootstrap";
-@import 'https://fonts.googleapis.com/css?family=Lobster|Raleway:300,400,500,700,800,900';
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400,500,700,800,900';
 @import "font-awesome-sprockets";
 @import "font-awesome";
 
 @font-face {
     font-family: 'SoulMarker';
     src:font-url('SoulMarker_Light.ttf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Lobster';
+    src:font-url('Lobster.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -36,6 +43,11 @@ body{
     color:#333333;
     margin: 0;
     padding: 0;
+    background-color: #fff;
+    background-image:
+    linear-gradient(90deg, transparent 79px, #abced4 79px, #abced4 81px, transparent 81px),
+    linear-gradient(#eee .1em, transparent .1em);
+    background-size: 100% 1.2em;
 }
 
 ::selection {
@@ -53,8 +65,14 @@ body{
 }
 
 .btn-primary, .btn-primary:hover, .btn-primary:active, .btn-primary:visited {
-    background-color: #A36DEF !important;
+    background-color: #8456C3 !important;
     border:none !important;
+    font-weight: bold;
+    border-radius: 0;
+    padding-right:20px;
+    padding-left:20px;
+    padding-top:12px;
+    padding-bottom:12px;
 }
 
 .btn-login{
@@ -74,7 +92,10 @@ body{
 
  .caption{
    font-family: 'Lobster';
-   margin-top:5%;
+   margin-top:50px;
+   color: #8456C3;
+   padding-bottom:3%;
+   //border-bottom: 3px dotted #8456C3;
    text-align: center;
    font-size: 30px;
  }
@@ -85,7 +106,7 @@ body{
     padding-right:20%;
     padding-top: 60px;
     padding-bottom: 100px;
-    margin-top:50px;
+    margin-top:10px;
     background: #fff;
     font-family: 'Raleway', sans-serif;
 
@@ -112,7 +133,7 @@ body{
 
 
 .item-right{
-  position:absolute;
+  position:fixed;
   right: 25px;
   margin: 0;
   top:20px;
@@ -122,7 +143,7 @@ body{
   font-weight:700;
 }
 
-.item-right i{
+.item-right i, a{
   color:#A36DEF;
 }
 
@@ -131,6 +152,7 @@ body{
   font-weight: 500;
   font-family: 'LittleDays';
   margin: 0 auto;
+  margin-bottom: 10px;
   padding: 0;
   line-height: .9em;
 
@@ -206,6 +228,49 @@ body{
     font-size: 17px;
 }
 
+.post-title{
+  font-size: 50px;
+  text-align: center;
+
+}
+
+.post-title h1{
+  margin:0;
+  padding:0;
+
+}
+
+.post-title i {
+  font-size: 30px;
+}
+
+.post-content{
+  padding-top: 10px;
+  font-size: 18px;
+  line-height: 1.6;
+  padding-left: 5%;
+  padding-right: 5%;
+
+}
+
+.comments{
+  margin-top: 35px;
+
+}
+
+.comments h1{
+  font-family: 'Lobster';
+  margin-bottom: 15px;
+
+}
+.comments h2{
+  font-family: 'Raleway';
+  font-weight: 200;
+  margin-bottom: 15px;
+
+}
+
+
   #snackbar.show {
       visibility: visible;
       -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
@@ -258,6 +323,10 @@ body{
     font-size: 20px;
     color:#333;
 
+  }
+
+  textarea{
+    border: none !important;
   }
 
   .vertical-center {

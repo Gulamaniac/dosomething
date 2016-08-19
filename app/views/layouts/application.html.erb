@@ -19,17 +19,17 @@
 </style>
 
 
-<body style="
-justify-content: center;">
+<body style="justify-content: center;">
 
 <% if user_signed_in? %>
 
         <div class="item-right">
-          <span><%= current_user.email %></span>
+          <span><%= link_to current_user.email, home_path(current_user) %></span>
           <%= link_to '<i style="font-size:20px" class="fa fa-power-off"></i>'.html_safe, destroy_user_session_path, method: :delete %>
         </div>
 
 <% end %>
+      
 
 <%= yield %>
 

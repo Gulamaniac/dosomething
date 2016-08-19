@@ -2,10 +2,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: {registrations: "registrations", omniauth_callbacks: "omniauth_callbacks"}
 
+  resources :home
   resources :posts do
-    collection do
-      get 'list'
-    end
     resources :comments
   end
 
