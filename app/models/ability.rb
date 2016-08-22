@@ -5,10 +5,13 @@ class Ability
 
     can   :update, Post do |post|
           post.user == user
-
+          can  :destroy, Comment do |comment|
+                comment.user == user
+                post.user == user
+          end
     end
 
-    can  :destroy, Comment do |comment|
+    can  :update, Comment do |comment|
           comment.user == user
     end
 

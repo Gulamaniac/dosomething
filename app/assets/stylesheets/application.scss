@@ -60,7 +60,7 @@ body{
 }
 
 .btn-primary .btn-raised{
-  background: #A36DEF;
+    background: #A36DEF;
 
 }
 
@@ -100,17 +100,96 @@ body{
    font-size: 30px;
  }
 
+ .close-animatedModal i {
+   cursor: pointer;
+ }
+
+ .close-animatedModal i:hover {
+   -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    transition: all 0.5s ease;
+ }
+
+ #circle {
+    background-color:#8456C3;
+    width:130px;
+    height:130px;
+    border-radius:100%;
+    z-index:10;
+    line-height:130px;
+    font-size: 20px;
+    margin:0 auto;
+    transform: translateY(-75px);
+    text-align:center;
+
+}
+
+#circle span{
+    color: white;
+    font-family: 'Lobster';
+    line-height: normal;
+    display:inline-block;
+    vertical-align: middle;
+}
+
+#circle-left {
+   background-color:#8456C3;
+   width:100px;
+   height:100px;
+   clear:both;
+   border-radius:100%;
+   z-index:10;
+   line-height:100px;
+   font-size: 20px;
+   margin-left: 5px;
+   margin-bottom: 0;
+   padding:0;
+   transform: translateY(-55px);
+   text-align:center;
+   cursor:pointer;
+   transition-duration: .5s;
+   color:white;
+
+}
+
+#circle-left:hover{
+  background-color:#fff;
+  color: #8456C3;
+  clear:both;
+  font-size: 30px;
+}
+
+#circle-left span{
+   font-family: 'Lobster';
+   line-height: normal;
+   display:inline-block;
+   vertical-align: middle;
+}
+
  .container{
-    width: 100%;
-    padding-left:20%;
-    padding-right:20%;
-    padding-top: 60px;
-    padding-bottom: 100px;
-    margin-top:10px;
-    background: #fff;
-    font-family: 'Raleway', sans-serif;
+
+      border-top: 7px solid #8456C3;
+      width:88%;
+      padding-left:7%;
+      padding-right:7%;
+      padding-bottom: 100px;
+      box-shadow: 0 0 30px black;
+      background: #fff;
+      font-family: 'Raleway', sans-serif;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+      margin-top:7%;
 
   }
+
+  .container-posts{
+     width:88%;
+     padding-left:7%;
+     padding-right:7%;
+     padding-bottom: 100px;
+     background: #fff;
+     font-family: 'Raleway', sans-serif;
+
+   }
 
 .container h1{
 
@@ -191,7 +270,13 @@ body{
     box-shadow: none;
   }
 
-  .label-static input::-webkit-input-placeholder{
+  .label-static ::-webkit-input-placeholder{
+    font-family: 'Roboto';
+    color: #A881D9;
+    font-size: 14px;
+  }
+
+  .label-static input::-webkit-textarea-placeholder{
     font-family: 'Roboto';
     color: #A881D9;
     font-size: 14px;
@@ -295,11 +380,6 @@ body{
   @keyframes fadeout {
       from {bottom: 30px; opacity: 1;}
       to {bottom: 0; opacity: 0;}
-  }
-
-
-  .list-item-container{
-    margin-top:30px;
   }
 
   .list-item-header span{

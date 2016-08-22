@@ -1,9 +1,9 @@
 class User < ActiveRecord::Base
   has_many :posts
   # Include default devise modules. Others available are:
-  # :lockable, :timeoutable
+  #
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable, :confirmable,
+         :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable, :timeoutable,
          :omniauthable, :omniauth_providers => [:facebook, :google_oauth2]
 
   def self.from_omniauth(auth)

@@ -19,6 +19,22 @@ class CommentsController < ApplicationController
     redirect_to :back
   end
 
+  def edit
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    respond_to do |format|
+      if @comment.update(comments_params)
+        format.html { redirect_to post_path(params[:post_id]), notice: 'Comment successfully updated.' }
+
+      end
+    end
+  end
+
   private
     def comments_params
       params.require(:comment).permit(:text)
